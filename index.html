@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mirenelle — E-Commerce Company</title>
+  <title>Mirenelle — E-Commerce Retail Company</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -35,7 +35,7 @@
     /* NAV */
     nav {
       position: sticky; top: 0;
-      background: rgba(250,250,248,0.92);
+      background: rgba(250,250,248,0.93);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
@@ -80,7 +80,7 @@
       margin: 0 auto;
       padding: 110px 64px 100px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 80px;
       align-items: center;
     }
@@ -97,9 +97,9 @@
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(38px, 4.5vw, 54px);
+      font-size: clamp(34px, 4vw, 50px);
       font-weight: 400;
-      line-height: 1.18;
+      line-height: 1.2;
       letter-spacing: -0.01em;
       color: var(--dark);
       margin-bottom: 24px;
@@ -107,10 +107,10 @@
     .hero-sub {
       font-size: 15px;
       color: var(--mid);
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 40px;
     }
-    .hero-actions { display: flex; gap: 16px; align-items: center; }
+    .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
     .btn-primary {
       font-size: 13px;
       font-weight: 500;
@@ -134,39 +134,39 @@
     .btn-ghost:hover { color: var(--dark); }
     .btn-ghost::after { content: '→'; }
 
-    .hero-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .stat-card {
+    /* Hero info cards */
+    .hero-right { display: flex; flex-direction: column; gap: 12px; }
+    .info-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 28px 24px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
-    .stat-card.dark {
-      grid-column: span 2;
+    .info-card.dark {
       background: var(--dark);
+      border-color: var(--dark);
     }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 400;
-      color: var(--dark);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-card.dark .stat-num { color: var(--accent); font-size: 42px; }
-    .stat-label {
-      font-size: 12px;
-      letter-spacing: 0.08em;
+    .info-icon { font-size: 18px; flex-shrink: 0; }
+    .info-text {}
+    .info-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--light);
+      margin-bottom: 3px;
     }
-    .stat-card.dark .stat-label { color: rgba(255,255,255,0.35); }
+    .info-card.dark .info-label { color: rgba(255,255,255,0.3); }
+    .info-value {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--dark);
+    }
+    .info-card.dark .info-value { color: var(--white); }
 
-    /* COMMON SECTION */
+    /* COMMON */
     .section {
       max-width: 960px;
       margin: 0 auto;
@@ -181,7 +181,7 @@
     }
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 3vw, 38px);
+      font-size: clamp(26px, 3vw, 36px);
       font-weight: 400;
       line-height: 1.2;
       color: var(--dark);
@@ -191,9 +191,8 @@
       font-size: 15px;
       color: var(--mid);
       line-height: 1.8;
-      max-width: 560px;
+      max-width: 600px;
     }
-
     hr.divider {
       border: none;
       border-top: 1px solid var(--border);
@@ -201,8 +200,40 @@
       margin: 0 auto;
     }
 
-    /* SERVICES */
-    .services-grid {
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 0;
+    }
+    .about-body { font-size: 15px; color: var(--mid); line-height: 1.85; }
+    .about-facts { display: flex; flex-direction: column; gap: 0; }
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 24px;
+    }
+    .fact-row:first-child { border-top: 1px solid var(--border); }
+    .fact-key {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light);
+      flex-shrink: 0;
+    }
+    .fact-val {
+      font-size: 14px;
+      color: var(--dark);
+      text-align: right;
+    }
+
+    /* WHAT WE DO */
+    .cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
@@ -212,52 +243,135 @@
       overflow: hidden;
       margin-top: 48px;
     }
-    .service-item {
+    .card {
       background: var(--white);
       padding: 40px 32px;
       transition: background 0.2s;
     }
-    .service-item:hover { background: var(--accent-soft); }
-    .service-icon {
-      font-size: 22px;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .service-title {
+    .card:hover { background: var(--accent-soft); }
+    .card-icon { font-size: 22px; margin-bottom: 20px; display: block; }
+    .card-title {
       font-size: 15px;
       font-weight: 500;
       color: var(--dark);
       margin-bottom: 10px;
     }
-    .service-desc {
-      font-size: 13px;
-      color: var(--mid);
-      line-height: 1.75;
-    }
+    .card-desc { font-size: 13px; color: var(--mid); line-height: 1.75; }
 
-    /* WHY */
+    /* PRODUCT CATEGORIES */
+    .categories-wrap {
+      background: var(--dark);
+      padding: 80px 0;
+    }
+    .categories-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .categories-inner .section-label { color: var(--accent); }
+    .categories-inner .section-title { color: var(--white); }
+    .categories-inner .section-text { color: rgba(255,255,255,0.4); }
+    .cat-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      overflow: hidden;
+      align-self: center;
+    }
+    .cat-item {
+      background: rgba(255,255,255,0.03);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s;
+    }
+    .cat-item:hover { background: rgba(201,169,110,0.12); }
+    .cat-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .cat-name { font-size: 13px; color: rgba(255,255,255,0.7); }
+
+    /* WHY PARTNERS */
     .why-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px 80px;
+      gap: 0 80px;
       margin-top: 48px;
     }
+    .why-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .why-item:nth-child(odd):last-child { border-bottom: none; }
+    .why-item:nth-last-child(-n+2) { border-bottom: none; }
     .why-num {
       font-family: 'Playfair Display', serif;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    .why-title {
-      font-size: 15px;
-      font-weight: 500;
+    .why-title { font-size: 14px; font-weight: 500; color: var(--dark); margin-bottom: 7px; }
+    .why-desc { font-size: 13px; color: var(--mid); line-height: 1.75; }
+
+    /* GEOGRAPHY */
+    .geo-wrap {
+      background: var(--accent-soft);
+      padding: 80px 0;
+      border-top: 1px solid #E0D4BE;
+      border-bottom: 1px solid #E0D4BE;
+    }
+    .geo-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .geo-text { font-size: 15px; color: var(--mid); line-height: 1.85; margin-top: 20px; }
+    .geo-right { display: flex; flex-direction: column; gap: 16px; }
+    .geo-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--white);
+      border-radius: 4px;
+      border: 1px solid #E0D4BE;
+    }
+    .geo-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .geo-point-title { font-size: 13px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+    .geo-point-desc { font-size: 12px; color: var(--mid); line-height: 1.6; }
+
+    /* WHO WE WORK WITH */
+    .who-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .who-text { font-size: 15px; color: var(--mid); line-height: 1.85; margin-top: 16px; }
+    .who-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .who-tag {
+      font-size: 12px;
+      letter-spacing: 0.06em;
       color: var(--dark);
-      margin-bottom: 8px;
-    }
-    .why-desc {
-      font-size: 13px;
-      color: var(--mid);
-      line-height: 1.75;
+      border: 1px solid var(--border);
+      background: var(--white);
+      padding: 8px 16px;
+      border-radius: 2px;
     }
 
     /* CONTACT */
@@ -276,13 +390,10 @@
     }
     .contact-wrap .section-label { color: var(--accent); }
     .contact-wrap .section-title { color: var(--white); }
-    .contact-wrap .section-text { color: rgba(255,255,255,0.4); }
-
+    .contact-wrap .section-text { color: rgba(255,255,255,0.4); margin-top: 16px; }
     .contact-items { display: flex; flex-direction: column; }
     .contact-row {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
+      display: flex; flex-direction: column; gap: 5px;
       padding: 24px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -302,7 +413,6 @@
       transition: color 0.2s;
     }
     .contact-row-value:hover { color: var(--accent); }
-    .social-row { display: flex; gap: 20px; margin-top: 4px; }
 
     /* FOOTER */
     footer {
@@ -323,8 +433,8 @@
       color: rgba(255,255,255,0.35);
       text-decoration: none;
     }
-    .footer-social { display: flex; gap: 28px; }
-    .footer-social a {
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a {
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -332,17 +442,24 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-social a:hover { color: var(--accent); }
+    .footer-links a:hover { color: var(--accent); }
     .footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
 
     /* RESPONSIVE */
     @media (max-width: 800px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
+      .hero { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
       .section { padding: 60px 24px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .categories-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
+      .why-grid { grid-template-columns: 1fr; gap: 0; }
+      .why-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .why-item:last-child { border-bottom: none; }
+      .geo-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
+      .geo-wrap { padding: 60px 0; }
+      .who-inner { grid-template-columns: 1fr; gap: 32px; }
       .contact-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 48px; }
       .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
       footer { padding: 32px 24px; }
@@ -351,103 +468,220 @@
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
     <a href="#" class="logo">Miren<span>elle</span></a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#what-we-do">What we do</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Get in touch</a>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <span class="hero-tag">E-Commerce Company</span>
-      <h1 class="hero-title">We help brands sell better online</h1>
-      <p class="hero-sub">Mirenelle is an e-commerce company focused on building and scaling online retail. We connect quality products with the right customers — efficiently and reliably.</p>
+      <span class="hero-tag">Austria · E-Commerce</span>
+      <h1 class="hero-title">European e-commerce retail company focused on Amazon and eBay</h1>
+      <p class="hero-sub">Mirenelle is an Austria-based e-commerce company. We source branded products from wholesale partners and sell them through leading online marketplaces such as Amazon and eBay.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Contact us</a>
-        <a href="#services" class="btn-ghost">Our services</a>
+        <a href="#about" class="btn-ghost">About company</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="stat-card dark">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Online focused</div>
+      <div class="info-card dark">
+        <span class="info-icon">🇦🇹</span>
+        <div class="info-text">
+          <div class="info-label">Registered in</div>
+          <div class="info-value">Vienna, Austria</div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">Fast</div>
-        <div class="stat-label">Delivery</div>
+      <div class="info-card">
+        <span class="info-icon">🛒</span>
+        <div class="info-text">
+          <div class="info-label">Marketplaces</div>
+          <div class="info-value">Amazon &amp; eBay</div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label">Support</div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <section class="section" id="services">
-    <p class="section-label">What we do</p>
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-text">From product sourcing to order fulfilment, we handle the full e-commerce cycle so you can focus on growth.</p>
-    <div class="services-grid">
-      <div class="service-item">
-        <span class="service-icon">🛍</span>
-        <div class="service-title">Online Retail</div>
-        <p class="service-desc">We operate curated online stores with a focus on quality products and a seamless customer experience.</p>
-      </div>
-      <div class="service-item">
-        <span class="service-icon">📦</span>
-        <div class="service-title">Fulfilment</div>
-        <p class="service-desc">Reliable warehousing, picking, packing and delivery to your customers — on time, every time.</p>
-      </div>
-      <div class="service-item">
-        <span class="service-icon">📊</span>
-        <div class="service-title">Growth & Analytics</div>
-        <p class="service-desc">Data-driven decisions to grow revenue, optimise conversion and reduce returns.</p>
+      <div class="info-card">
+        <span class="info-icon">🏭</span>
+        <div class="info-text">
+          <div class="info-label">Prep center</div>
+          <div class="info-value">Germany</div>
+        </div>
       </div>
     </div>
   </section>
 
   <hr class="divider" />
 
+  <!-- ABOUT -->
   <section class="section" id="about">
-    <p class="section-label">Why Mirenelle</p>
-    <h2 class="section-title">Built for e-commerce,<br>from the ground up</h2>
-    <p class="section-text">We are not a generic agency. Everything we do is purpose-built for online commerce — from technology to logistics.</p>
+    <p class="section-label">About Mirenelle</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="section-title">Austrian e-commerce retail company</h2>
+        <p class="about-body">Mirenelle is a registered Austrian e-commerce company. We purchase branded products from wholesale suppliers and distributors and sell them through online sales channels across Europe. Our focus is on efficient sourcing, reliable operations and long-term supplier relationships.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact-row">
+          <span class="fact-key">Legal base</span>
+          <span class="fact-val">Vienna, Austria</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-key">Sales channels</span>
+          <span class="fact-val">Amazon, eBay</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-key">Sourcing</span>
+          <span class="fact-val">Wholesale &amp; distributors</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-key">Prep support</span>
+          <span class="fact-val">Germany</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-key">Market</span>
+          <span class="fact-val">Europe</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- WHAT WE DO -->
+  <section class="section" id="what-we-do">
+    <p class="section-label">What we do</p>
+    <h2 class="section-title">Our operations</h2>
+    <p class="section-text">We handle sourcing, marketplace sales and day-to-day operations as an integrated retail business.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">🤝</span>
+        <div class="card-title">Wholesale sourcing</div>
+        <p class="card-desc">We work with manufacturers, suppliers and distributors to source branded products across multiple categories.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🛒</span>
+        <div class="card-title">Marketplace sales</div>
+        <p class="card-desc">We sell products through leading online marketplaces, including Amazon and eBay.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚙️</span>
+        <div class="card-title">Reliable operations</div>
+        <p class="card-desc">We focus on structured purchasing, order processing and long-term business relationships.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CATEGORIES -->
+  <div class="categories-wrap">
+    <div class="categories-inner">
+      <div>
+        <p class="section-label">Product categories</p>
+        <h2 class="section-title" style="color:#fff;">What we sell</h2>
+        <p class="section-text">We work with a broad range of product categories depending on supplier availability and market demand.</p>
+      </div>
+      <div class="cat-list">
+        <div class="cat-item"><span class="cat-dot"></span><span class="cat-name">Home goods</span></div>
+        <div class="cat-item"><span class="cat-dot"></span><span class="cat-name">Electronics</span></div>
+        <div class="cat-item"><span class="cat-dot"></span><span class="cat-name">Household products</span></div>
+        <div class="cat-item"><span class="cat-dot"></span><span class="cat-name">Daily essentials</span></div>
+        <div class="cat-item"><span class="cat-dot"></span><span class="cat-name">Toys</span></div>
+        <div class="cat-item"><span class="cat-dot"></span><span class="cat-name">Seasonal products</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY PARTNERS WORK WITH US -->
+  <section class="section">
+    <p class="section-label">Why partners work with us</p>
+    <h2 class="section-title">A reliable retail partner<br>in Europe</h2>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-num">01</div>
-        <div class="why-title">End-to-end ownership</div>
-        <p class="why-desc">We manage the entire customer journey — from first click to delivery and returns.</p>
+        <div class="why-title">Registered in Austria</div>
+        <p class="why-desc">European legal entity with operational base in Vienna.</p>
       </div>
       <div class="why-item">
         <div class="why-num">02</div>
-        <div class="why-title">Lean & efficient</div>
-        <p class="why-desc">No unnecessary overhead. Our streamlined operations keep costs low and margins healthy.</p>
+        <div class="why-title">Marketplace expertise</div>
+        <p class="why-desc">Active in online retail with a focus on Amazon and eBay.</p>
       </div>
       <div class="why-item">
         <div class="why-num">03</div>
-        <div class="why-title">Customer-first mindset</div>
-        <p class="why-desc">Every decision starts with the end customer. Fast shipping, clear communication, easy returns.</p>
+        <div class="why-title">Prep center in Germany</div>
+        <p class="why-desc">We work with a prep center in Germany to support efficient marketplace operations and order handling.</p>
       </div>
       <div class="why-item">
         <div class="why-num">04</div>
-        <div class="why-title">Based in Vienna</div>
-        <p class="why-desc">Operating from Austria, serving customers across Europe with a focus on quality and reliability.</p>
+        <div class="why-title">Long-term approach</div>
+        <p class="why-desc">We aim to build stable supplier relationships, not one-time purchases.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">05</div>
+        <div class="why-title">Cross-category sourcing</div>
+        <p class="why-desc">We work with a broad range of branded consumer products across multiple categories.</p>
       </div>
     </div>
   </section>
 
+  <hr class="divider" />
+
+  <!-- GEOGRAPHY -->
+  <div class="geo-wrap">
+    <div class="geo-inner">
+      <div>
+        <p class="section-label">Geography</p>
+        <h2 class="section-title">Based in Vienna,<br>operating across Europe</h2>
+        <p class="geo-text">Our company is based in Vienna, Austria. We work with suppliers across Europe and operate with prep support in Germany for marketplace logistics and processing.</p>
+      </div>
+      <div class="geo-right">
+        <div class="geo-point">
+          <span class="geo-icon">🇦🇹</span>
+          <div>
+            <div class="geo-point-title">Vienna, Austria — HQ</div>
+            <p class="geo-point-desc">Registered legal entity and operational base. All business decisions and supplier relations are managed from Vienna.</p>
+          </div>
+        </div>
+        <div class="geo-point">
+          <span class="geo-icon">🇩🇪</span>
+          <div>
+            <div class="geo-point-title">Germany — Prep center</div>
+            <p class="geo-point-desc">Prep center partnership for marketplace logistics, product processing and order handling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO WE WORK WITH -->
+  <section class="section">
+    <p class="section-label">Who we work with</p>
+    <div class="who-inner">
+      <div>
+        <h2 class="section-title">Open to cooperation</h2>
+        <p class="who-text">We are open to cooperation with manufacturers, wholesalers, distributors and brand owners looking for a reliable online retail partner in Europe.</p>
+      </div>
+      <div class="who-tags">
+        <span class="who-tag">Manufacturers</span>
+        <span class="who-tag">Wholesalers</span>
+        <span class="who-tag">Distributors</span>
+        <span class="who-tag">Brand owners</span>
+        <span class="who-tag">Online retail partners</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <div class="contact-wrap" id="contact">
     <div class="contact-inner">
       <div>
         <p class="section-label">Contact</p>
         <h2 class="section-title">Let's talk</h2>
-        <p class="section-text">Have a question or want to work together? Reach out — we respond within one business day.</p>
+        <p class="section-text">Have a question or want to discuss cooperation? Reach out to us and we will get back to you as soon as possible.</p>
       </div>
       <div class="contact-items">
         <div class="contact-row">
@@ -456,33 +690,26 @@
         </div>
         <div class="contact-row">
           <span class="contact-row-label">Phone</span>
-          <a href="tel:+4367763739315" class="contact-row-value">+43 677 637 393 15</a>
+          <a href="tel:+4367763739315" class="contact-row-value">+43 677 637 39 315</a>
         </div>
         <div class="contact-row">
           <span class="contact-row-label">Location</span>
           <span class="contact-row-value">Vienna, Austria</span>
         </div>
-        <div class="contact-row">
-          <span class="contact-row-label">Follow us</span>
-          <div class="social-row">
-            <a href="https://www.instagram.com/mirenelle_me/" class="contact-row-value" style="font-size:13px;">Instagram</a>
-            <a href="https://www.amazon.de/dp/B0G2Z2P8HC" class="contact-row-value" style="font-size:13px;">Amazon</a>
-            <a href="#" class="contact-row-value" style="font-size:13px;">Facebook</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <a href="#" class="footer-logo">Mirenelle</a>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/mirenelle_me/">Instagram</a>
-        <a href="https://www.amazon.de/dp/B0G2Z2P8HC">Amazon</a>
-        <a href="#">Facebook</a>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#what-we-do">What we do</a>
+        <a href="#contact">Contact</a>
       </div>
-      <span class="footer-copy">© 2024 Mirenelle. All rights reserved.</span>
+      <span class="footer-copy">© Mirenelle. All rights reserved.</span>
     </div>
   </footer>
 
